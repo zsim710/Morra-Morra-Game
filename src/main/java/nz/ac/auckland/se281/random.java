@@ -2,7 +2,7 @@ package nz.ac.auckland.se281;
 
 public class Random implements Strategy {
 
-  int result;
+  private int result;
 
   @Override
   public int getFingers() {
