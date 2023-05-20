@@ -1,6 +1,6 @@
 package nz.ac.auckland.se281;
 
-public class random implements Strategy {
+public class Random implements Strategy {
 
   int result;
 

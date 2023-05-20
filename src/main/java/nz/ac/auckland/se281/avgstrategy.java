@@ -3,12 +3,12 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import java.util.List;
 
-public class avgstrategy implements Strategy {
+public class AvgStrategy implements Strategy {
 
   private List<Integer> prevfingers = new ArrayList<Integer>();
-  int result;
-
-  public avgstrategy(List<Integer> prevfingers) {
+  private int result;
+ 
+  public AvgStrategy(List<Integer> prevfingers) {
     this.prevfingers = prevfingers;
   }
 
@@ -25,10 +25,6 @@ public class avgstrategy implements Strategy {
       total = total + prevfingers.get(i);
     }
     int avg = (int) Math.round(total / prevfingers.size());
-
-    // System.err.println("----");
-    // System.err.println(avg);
-    // System.err.println("-----");
 
     return result + avg;
   }

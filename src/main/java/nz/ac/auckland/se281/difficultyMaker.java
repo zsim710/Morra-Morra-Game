@@ -1,18 +1,18 @@
 package nz.ac.auckland.se281;
 
-public class difficultyMaker {
+public class DifficultyMaker {
 
-  public static level createCpu(String difficulty) {
+  public static Level createCpu(String difficulty) {
 
     switch (difficulty) {
       case "EASY":
-        return new easy(new random());
+        return new Easy(new Random());
       case "MEDIUM":
-        return new medium(new random());
+        return new Medium(new Random());
       case "HARD":
-        return new hard(new random());
+        return new Hard(new Random());
       case "MASTER":
-        return new master(new random());
+        return new Master(new Random());
       default:
         return null;
     }

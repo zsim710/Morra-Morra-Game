@@ -1,13 +1,12 @@
 package nz.ac.auckland.se281;
 
-public class medium implements level {
+public class Medium implements Level {
 
   private Strategy strategy;
 
-  public medium(Strategy strategy) {
+  public Medium(Strategy strategy) {
     this.strategy = strategy;
   }
-
   public void setStrategy(Strategy strategy) {
     this.strategy = strategy;
   }

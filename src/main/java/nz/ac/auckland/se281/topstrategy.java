@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class topstrategy implements Strategy {
+public class TopStrategy implements Strategy {
 
   private List<Integer> prevfingers = new ArrayList<Integer>();
-  int result;
+  private int result;
 
-  public topstrategy(List<Integer> prevfingers) {
+  public TopStrategy(List<Integer> prevfingers) {
     this.prevfingers = prevfingers;
   }
 

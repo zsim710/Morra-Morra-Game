@@ -1,10 +1,10 @@
 package nz.ac.auckland.se281;
 
-public class easy implements level {
+public class Easy implements Level {
 
   private Strategy strategy;
 
-  public easy(Strategy strategy) {
+  public Easy(Strategy strategy) {
     this.strategy = strategy;
   }
 
