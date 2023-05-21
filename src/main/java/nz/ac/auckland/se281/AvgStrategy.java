@@ -7,7 +7,7 @@ public class AvgStrategy implements Strategy {
 
   private List<Integer> prevfingers = new ArrayList<Integer>();
   private int result;
- 
+
   public AvgStrategy(List<Integer> prevfingers) {
     this.prevfingers = prevfingers;
   }

@@ -1,10 +1,11 @@
 package nz.ac.auckland.se281;
 
-public class Master implements Level {
+public class Easy implements Level {
+  
 
   private Strategy strategy;
 
-  public Master(Strategy strategy) {
+  public Easy(Strategy strategy) {
     this.strategy = strategy;
   }
 
@@ -19,7 +20,5 @@ public class Master implements Level {
   }
 
   @Override
-  public void setStrategy(Strategy strategy) {
-    this.strategy = strategy;
-  }
+  public void setStrategy(Strategy strategy) {}
 }

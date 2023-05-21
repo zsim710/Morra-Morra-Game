@@ -1,6 +1,7 @@
 package nz.ac.auckland.se281;
 
 public class DifficultyMaker {
+  
 
   public static Level createCpu(String difficulty) {
 
