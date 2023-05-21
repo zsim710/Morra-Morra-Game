@@ -98,13 +98,14 @@ public class Morra {
     // while loop to keep letting person enter valid fingers and sum
     while (true) {
       MessageCli.ASK_INPUT.printMessage();
+
       String input = Utils.scanner.nextLine();
       String[] fingerNsum = input.split(" ");
 
       players.get(0).setfingers(fingerNsum[0]);
       players.get(0).setSum(fingerNsum[1]);
 
-      if (players.get(0).isValidfingers() && players.get(0).isValidSum()) {
+      if (players.get(0).isValidfingers() && players.get(0).isValidSum() && fingerNsum.length == 2) {
         MessageCli.PRINT_INFO_HAND.printMessage(
             players.get(0).getPlayerName(),
             players.get(0).getPlayerfingers(),
@@ -114,6 +115,7 @@ public class Morra {
         MessageCli.INVALID_INPUT.printMessage();
       }
     }
+
 
     int cpufingers = CPU.get(0).getFingers();
 
