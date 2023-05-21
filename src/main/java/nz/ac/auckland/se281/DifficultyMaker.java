@@ -7,11 +7,11 @@ public class DifficultyMaker {
 
     switch (difficulty) {
       case "EASY":
-        return new Easy(new Random());
+        return new EasyLevel(new Random());
       case "MEDIUM":
         return new Medium(new Random());
       case "HARD":
-        return new Hard(new Random());
+        return new HardLevel(new Random());
       case "MASTER":
         return new Master(new Random());
       default:

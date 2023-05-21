@@ -1,11 +1,11 @@
 package nz.ac.auckland.se281;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 public class AvgStrategy implements Strategy {
 
-  private List<Integer> previousfingers = new ArrayList<Integer>();
+  private List<Integer> previousfingers;
   private int result;
 
   public AvgStrategy(List<Integer> previousfingers) {

@@ -155,11 +155,11 @@ public class Morra {
       gameisrunning = false;
       return;
     } else {
-      if (round == 3 && cpu.get(0).getClass().equals(Medium.class)) {
+      if (round == 3 && cpu.get(0).getClass().equals(MediumLevel.class)) {
         cpu.get(0).setStrategy(new AvgStrategy(prevfingers));
-      } else if (round == 3 && (cpu.get(0).getClass().equals(Hard.class))) {
+      } else if (round == 3 && (cpu.get(0).getClass().equals(HardLevel.class))) {
         cpu.get(0).setStrategy(new TopStrategy(prevfingers));
-      } else if ((cpu.get(0).getClass().equals(Master.class) && round >= 3)) {
+      } else if ((cpu.get(0).getClass().equals(MasterLevel.class) && round >= 3)) {
         if (round % 2 == 0) {
           cpu.get(0).setStrategy(new TopStrategy(prevfingers));
         } else {
