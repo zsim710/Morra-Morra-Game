@@ -48,7 +48,7 @@ public class Main {
       this.optionPrompts = optionPrompts;
     }
 
-    public boolean hasArguments() {
+    public boolean hasArguments() { 
       return numArgs > 0;
     }
 
