@@ -59,29 +59,35 @@ public class Morra {
   // use arraylists to store players information and cpus information.
   // also store previous fingers to use in the strategies.
   private List<Player> players = new ArrayList<Player>();
-  private List<Level> CPU = new ArrayList<Level>();
+  private List<Level> cpu = new ArrayList<Level>();
   private List<Integer> prevfingers = new ArrayList<Integer>();
 
   public Morra() {}
 
-  boolean gameisrunning = false;
-  int humanpoints = 0;
-  int aipoints = 0;
-  int pointstowin = 0;
+  private boolean gameisrunning = false;
+  private int humanpoints = 0;
+  private int aipoints = 0;
+  private int pointstowin = 0;
 
+  // method to start the game.
   public void newGame(Difficulty difficulty, int pointsToWin, String[] options) {
+
+    // condition met after using newgame command, boolean ensures game is running to stop use of
+    // other commands before new game command used.
     gameisrunning = true;
 
+    // clear Lists and variables to start a new game.
     prevfingers.clear();
     players.clear();
     this.pointstowin = pointsToWin;
+
     round = 0;
     MessageCli.WELCOME_PLAYER.printMessage(options[0]);
     Player player1 = new Player(options[0]);
     players.add(player1);
 
     Level ai = DifficultyMaker.createCpu(String.valueOf(difficulty));
-    CPU.add(ai);
+    cpu.add(ai);
   }
 
   public void play() {
@@ -117,9 +123,9 @@ public class Morra {
       }
     }
 
-    int cpufingers = CPU.get(0).getFingers();
+    int cpufingers = cpu.get(0).getFingers();
 
-    int cpusum = CPU.get(0).getSum();
+    int cpusum = cpu.get(0).getSum();
     MessageCli.PRINT_INFO_HAND.printMessage(
         "Jarvis", Integer.toString(cpufingers), Integer.toString(cpusum));
 
@@ -149,15 +155,15 @@ public class Morra {
       gameisrunning = false;
       return;
     } else {
-      if (round == 3 && CPU.get(0).getClass().equals(Medium.class)) {
-        CPU.get(0).setStrategy(new AvgStrategy(prevfingers));
-      } else if (round == 3 && (CPU.get(0).getClass().equals(Hard.class))) {
-        CPU.get(0).setStrategy(new TopStrategy(prevfingers));
-      } else if ((CPU.get(0).getClass().equals(Master.class) && round >= 3)) {
+      if (round == 3 && cpu.get(0).getClass().equals(Medium.class)) {
+        cpu.get(0).setStrategy(new AvgStrategy(prevfingers));
+      } else if (round == 3 && (cpu.get(0).getClass().equals(Hard.class))) {
+        cpu.get(0).setStrategy(new TopStrategy(prevfingers));
+      } else if ((cpu.get(0).getClass().equals(Master.class) && round >= 3)) {
         if (round % 2 == 0) {
-          CPU.get(0).setStrategy(new TopStrategy(prevfingers));
+          cpu.get(0).setStrategy(new TopStrategy(prevfingers));
         } else {
-          CPU.get(0).setStrategy(new AvgStrategy(prevfingers));
+          cpu.get(0).setStrategy(new AvgStrategy(prevfingers));
         }
       } else {
         return;
@@ -167,10 +173,13 @@ public class Morra {
 
   public void showStats() {
 
+    // checks if game is running, only then will this command be executed.
     if (!gameisrunning) {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
-    } else {
+    }
+    // if game is running then will display ai and humans points and how many more points to win.
+    else {
       MessageCli.PRINT_PLAYER_WINS.printMessage(
           players.get(0).getPlayerName(),
           Integer.toString(humanpoints),

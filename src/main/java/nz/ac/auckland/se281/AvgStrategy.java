@@ -5,11 +5,11 @@ import java.util.List;
 
 public class AvgStrategy implements Strategy {
 
-  private List<Integer> prevfingers = new ArrayList<Integer>();
+  private List<Integer> previousfingers = new ArrayList<Integer>();
   private int result;
 
-  public AvgStrategy(List<Integer> prevfingers) {
-    this.prevfingers = prevfingers;
+  public AvgStrategy(List<Integer> previousfingers) {
+   this.previousfingers = previousfingers;
   }
 
   @Override
@@ -21,10 +21,10 @@ public class AvgStrategy implements Strategy {
   @Override
   public int getSum() {
     double total = 0;
-    for (int i = 0; i < prevfingers.size(); i++) {
-      total = total + prevfingers.get(i);
+    for (int i = 0; i < previousfingers.size(); i++) {
+      total = total + previousfingers.get(i);
     }
-    int avg = (int) Math.round(total / prevfingers.size());
+    int avg = (int) Math.round(total / previousfingers.size());
 
     return result + avg;
   }

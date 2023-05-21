@@ -7,11 +7,11 @@ import java.util.List;
 
 public class TopStrategy implements Strategy {
 
-  private List<Integer> prevfingers = new ArrayList<Integer>();
+  private List<Integer> previousfingers = new ArrayList<Integer>();
   private int result;
 
-  public TopStrategy(List<Integer> prevfingers) {
-    this.prevfingers = prevfingers;
+  public TopStrategy(List<Integer> previousfingers) {
+    this.previousfingers = previousfingers;
   }
 
   @Override
@@ -22,20 +22,23 @@ public class TopStrategy implements Strategy {
 
   @Override
   public int getSum() {
-    Collections.sort(prevfingers);
+
+    // code sorts the list of previous fingers and then finds the most common
+    Collections.sort(previousfingers);
 
     int maxcount = 0;
     int count = 1;
-    int currentnum = prevfingers.get(0);
-    for (int i = 1; i < prevfingers.size(); i++) {
-      if (prevfingers.get(i) == prevfingers.get(i - 1)) {
+    // for loop will go through the list and find the most common number.
+    int currentnum = previousfingers.get(0);
+    for (int i = 1; i < previousfingers.size(); i++) {
+      if (previousfingers.get(i) == previousfingers.get(i - 1)) {
         count++;
       } else {
         count = 1;
       }
 
       if (count >= maxcount) {
-        currentnum = prevfingers.get(i - 1);
+        currentnum = previousfingers.get(i - 1);
         maxcount = count;
       }
     }
