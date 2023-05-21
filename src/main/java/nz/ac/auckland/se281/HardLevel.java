@@ -1,7 +1,6 @@
 package nz.ac.auckland.se281;
 
 public class HardLevel implements Level {
-  
 
   private Strategy strategy;
 

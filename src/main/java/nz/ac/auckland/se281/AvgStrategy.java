@@ -1,6 +1,5 @@
 package nz.ac.auckland.se281;
 
-//import java.util.ArrayList;
 import java.util.List;
 
 public class AvgStrategy implements Strategy {
@@ -9,7 +8,7 @@ public class AvgStrategy implements Strategy {
   private int result;
 
   public AvgStrategy(List<Integer> previousfingers) {
-   this.previousfingers = previousfingers;
+    this.previousfingers = previousfingers;
   }
 
   @Override
