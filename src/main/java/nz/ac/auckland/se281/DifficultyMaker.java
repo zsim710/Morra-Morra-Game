@@ -9,11 +9,11 @@ public class DifficultyMaker {
       case "EASY":
         return new EasyLevel(new Random());
       case "MEDIUM":
-        return new Medium(new Random());
+        return new MediumLevel(new Random());
       case "HARD":
         return new HardLevel(new Random());
       case "MASTER":
-        return new Master(new Random());
+        return new MasterLevel(new Random());
       default:
         return null;
     }

@@ -1,11 +1,11 @@
 package nz.ac.auckland.se281;
 
-public class Master implements Level {
+public class MasterLevel implements Level {
   
 
   private Strategy strategy;
 
-  public Master(Strategy strategy) {
+  public MasterLevel(Strategy strategy) {
     this.strategy = strategy;
   }
 
